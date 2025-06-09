@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --color-background: #121212;
+    --color-surface: #1E1E1E;
+    --color-primary: #BB86FC;
+    --color-primary-variant: #3700B3;
+    --color-secondary: #03DAC6;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B3B3B3;
+    --color-error: #CF6679;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    animation: fadeIn 0.8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-shadow: 0 0 5px var(--color-primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-text-primary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+main {
+    padding: 2rem 5%;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero {
+    text-align: center;
+    padding: 6rem 1rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(55, 0, 179, 0.4), rgba(187, 134, 252, 0.3)), url('/images/hero-bg.jpg') no-repeat center center/cover;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.welcome h2 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.welcome p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.manual-game-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background-color: var(--color-surface);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.manual-game-form p {
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+}
+
+.manual-game-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--color-secondary);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #2c2c2c;
+    border: 2px solid #444;
+    border-radius: 5px;
+    color: var(--color-text-primary);
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: var(--color-primary-variant);
+    transform: translateY(-2px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead tr {
+    background-color: var(--color-primary-variant);
+    color: var(--color-text-primary);
+    text-align: left;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 1rem 1.2rem;
+}
+
+tbody tr {
+    border-bottom: 1px solid #2c2c2c;
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:last-of-type {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #2a2a2a;
+}
+
+td a, td input[type="submit"], td button {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+td a {
+    background-color: #3777B3;
+}
+td a:hover {
+    background-color: #285580;
+}
+
+td form {
+    display: inline;
+}
+
+td input[type="submit"] {
+    background-color: var(--color-error);
+}
+td input[type="submit"]:hover {
+    background-color: #a54f60;
+}
+
+td button {
+    background-color: #E91E63;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+}
+td button:hover {
+    background-color: #c2185b;
+    transform: scale(1.1);
+}
+
+main > a {
+    display: inline-block;
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--color-secondary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+main > a:hover {
+    text-decoration: underline;
+}
