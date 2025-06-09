@@ -1,16 +1,9 @@
 server:
-    port: 8080
+  port: 8080
 
 spring:
-    datasource:
-        platform: postgres
-        url: ${DATABASE_URL}
-        username: ${DATABASE_USERNAME}
-        password: ${DATABASE_PASSWORD}
-        driverClassName: org.postgresql.Driver
-
-    sql:
-        init:
-            schema-locations: classpath:/schema-postgresql.sql
-            mode: always
-            platform: postgres
+  sql:
+    init:
+      schema-locations: classpath:/schema-postgresql.sql
+      mode: always
+      platform: postgres
